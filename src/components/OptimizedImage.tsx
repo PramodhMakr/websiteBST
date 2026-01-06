@@ -8,7 +8,7 @@ interface OptimizedImageProps {
   removeBorder?: boolean;
 }
 
-export default function OptimizedImage({ src, alt, className, style, removeBorder = false }: OptimizedImageProps) {
+export default function OptimizedImage({ src, alt, className, style }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
 
@@ -25,28 +25,33 @@ export default function OptimizedImage({ src, alt, className, style, removeBorde
 
   if (error) {
     return (
-      <div className={`bg-gray-200 flex items-center justify-center ${className || ''}`} style={style}>
+      <div className={`bg-transparent flex items-center justify-center ${className || ''}`} style={style}>
         <span className="text-gray-500 text-sm">Image not available</span>
       </div>
     );
   }
 
   return (
-    <div className={`relative ${className || ''} ${removeBorder ? 'image-no-border' : 'optimized-image'}`} style={style}>
+    <div className={`relative ${className || ''} image-no-border`} style={style}>
       <img
         src={optimizedSrc}
         alt={alt}
-        className={`transition-all duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover`}
+        className={`transition-all duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover rounded-lg`}
         style={{
           objectFit: 'cover',
           objectPosition: 'center',
+          border: 'none',
+          borderRadius: '8px',
+          background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
+          boxShadow: '0 4px 12px rgba(37, 99, 235, 0.15)',
+          padding: '4px',
         }}
         onLoad={handleLoad}
         onError={handleError}
         loading="lazy"
       />
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 animate-pulse rounded-lg" />
       )}
     </div>
   );

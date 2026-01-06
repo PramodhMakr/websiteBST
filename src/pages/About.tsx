@@ -26,7 +26,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-soft-slate">
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-700/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -96,14 +96,12 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="order-2 lg:order-1">
-              <div className="relative h-96 rounded-xl overflow-hidden">
+              <div className="relative h-96 overflow-hidden">
                 <OptimizedImage
                   src="/assets/04.jpg"
                   alt="Office Environment"
                   className="absolute inset-0"
-                  removeBorder={true}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-700/20 rounded-xl" />
               </div>
             </div>
 

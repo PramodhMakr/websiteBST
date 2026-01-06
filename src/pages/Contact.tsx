@@ -57,7 +57,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-soft-slate">
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-700/5">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
@@ -79,7 +79,7 @@ export default function Contact() {
                 href={info.href}
                 className="bg-white/60 p-8 rounded-xl border border-blue-600/20 hover:border-blue-600/40 transition-all group text-center"
               >
-                <info.icon className="h-12 w-12 text-blue-600 mb-4 mx-auto icon-hover-float" />
+                <info.icon className="h-12 w-12 text-blue-600 mb-4 mx-auto icon-hover-float icon-glow" />
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{info.title}</h3>
                 <p className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">{info.value}</p>
               </a>
@@ -112,7 +112,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500"
+                      className="form-input w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500 min-h-[44px]"
                       placeholder="John Doe"
                     />
                   </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500"
+                      className="form-input w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500 min-h-[44px]"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                       id="company"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500"
+                      className="form-input w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500 min-h-[44px]"
                       placeholder="Acme Corporation"
                     />
                   </div>
@@ -156,14 +156,14 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500 resize-none"
+                      className="form-input w-full px-4 py-3 border border-blue-600/20 rounded-lg focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 bg-white/60 text-slate-900 placeholder-slate-500 resize-none min-h-[44px]"
                       placeholder="Tell us about your security needs..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600/50 transition-all"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600/50 transition-all min-h-[44px]"
                   >
                     <Send className="mr-2 h-5 w-5" />
                     Send Message

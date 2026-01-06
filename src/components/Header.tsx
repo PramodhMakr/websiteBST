@@ -21,7 +21,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-3 group">
-            <Shield className="h-10 w-10 text-blue-600 group-hover:text-blue-700 transition-colors" />
+            <Shield className="h-10 w-10 text-blue-600 fill-blue-600 group-hover:text-blue-700 group-hover:fill-blue-700 transition-colors" />
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-slate-900">BST Infosec</span>
               <span className="text-xs text-blue-600 -mt-1">Technologies</span>
@@ -33,10 +33,10 @@ export default function Header() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors relative group ${
+                className={`nav-link text-sm font-medium transition-colors relative group py-2 px-3 rounded-md ${
                   isActive(link.path)
-                    ? 'text-blue-600'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {link.label}
@@ -51,7 +51,8 @@ export default function Header() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-slate-700 p-2 hover:bg-slate-100 rounded-lg transition-colors"
+            className="md:hidden text-slate-700 p-3 hover:bg-slate-100 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            aria-label="Toggle navigation menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -66,7 +67,7 @@ export default function Header() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors min-h-[44px] flex items-center ${
                   isActive(link.path)
                     ? 'bg-blue-600/10 text-blue-600'
                     : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'

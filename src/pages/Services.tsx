@@ -1,6 +1,5 @@
 import { Eye, Lock, Shield, Cloud, BarChart3, Users, CheckCircle, Zap } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
-import { Link } from 'react-router-dom';
 
 export default function Services() {
   const services = [
@@ -120,7 +119,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-soft-slate">
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-700/5">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
@@ -157,8 +156,7 @@ export default function Services() {
                       <OptimizedImage
                         src="/assets/stripped-02.jpg"
                         alt="Vulnerability Assessment Service"
-                        className="rounded-xl w-full h-48 object-cover"
-                        removeBorder={true}
+                        className="w-full h-48 object-cover"
                       />
                     </div>
                   )}

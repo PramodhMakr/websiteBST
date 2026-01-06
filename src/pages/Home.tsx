@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Shield, Lock, Eye, Cloud, FileCheck, Users, ArrowRight, CheckCircle, Zap, ExternalLink } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
+import ImageSlider from '../components/ImageSlider';
 
 export default function Home() {
   const coreServices = [
@@ -32,7 +33,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-soft-slate">
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-700/5" />
         <div className="relative max-w-7xl mx-auto">
@@ -63,23 +64,25 @@ export default function Home() {
                   Explore Our Services
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform icon-hover" />
                 </Link>
-                <a
-                  href="mailto:info@bstinfosec.com"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 font-semibold rounded-lg hover:bg-slate-50 border border-blue-600/30 transition-all group"
                 >
                   <Zap className="mr-2 h-5 w-5 text-blue-600 icon-hover" />
                   Get Free Assessment
-                </a>
+                </Link>
               </div>
             </div>
-            <div className="hidden lg:block relative h-96">
-              <OptimizedImage
-                src="/assets/stripped-03.jpg"
-                alt="Cybersecurity Team"
-                className="absolute inset-0 rounded-2xl overflow-hidden"
-                removeBorder={true}
+            <div className="lg:block">
+              <ImageSlider 
+                images={[
+                  "/assets/stripped-03.jpg",
+                  "/assets/stripped-05.jpg", 
+                  "/assets/stripped-06.jpg"
+                ]}
+                autoPlay={true}
+                interval={4000}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-700/20 rounded-2xl" />
             </div>
           </div>
         </div>
@@ -183,14 +186,12 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden">
+            <div className="relative h-96 overflow-hidden">
               <OptimizedImage
                 src="/assets/stripped-06.jpg"
                 alt="Security Team"
                 className="absolute inset-0"
-                removeBorder={true}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-700/20 rounded-2xl" />
             </div>
           </div>
         </div>
